@@ -1,0 +1,779 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8" />
+    <title>サービス名 | LPテンプレート</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description"
+          content="ここにサービスの概要説明を入れます。" />
+    <style>
+        :root {
+            --main-color: #2563eb; /* メインカラー */
+            --accent-color: #f97316; /* アクセントカラー */
+            --bg-light: #f3f4f6;
+            --text-main: #111827;
+            --text-sub: #6b7280;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+            line-height: 1.6;
+            color: var(--text-main);
+            background-color: #ffffff;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        img {
+            max-width: 100%;
+            display: block;
+        }
+
+        .container {
+            max-width: 1080px;
+            margin: 0 auto;
+            padding: 0 16px;
+        }
+
+        /* ヘッダー */
+        header {
+            position: sticky;
+            top: 0;
+            z-index: 10;
+            background-color: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(8px);
+            border-bottom: 1px solid #e5e7eb;
+        }
+
+        .header-inner {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 12px 0;
+        }
+
+        .logo {
+            font-weight: 700;
+            font-size: 1.1rem;
+        }
+
+            .logo span {
+                color: var(--main-color);
+            }
+
+        .header-nav {
+            display: flex;
+            gap: 16px;
+            font-size: 0.9rem;
+        }
+
+            .header-nav a {
+                color: var(--text-sub);
+            }
+
+                .header-nav a:hover {
+                    color: var(--main-color);
+                }
+
+        /* セクション共通 */
+        section {
+            padding: 64px 0;
+        }
+
+            section:nth-of-type(odd) {
+                background-color: #ffffff;
+            }
+
+            section:nth-of-type(even) {
+                background-color: var(--bg-light);
+            }
+
+        .section-title {
+            font-size: 1.8rem;
+            text-align: center;
+            margin-bottom: 32px;
+        }
+
+            .section-title span {
+                color: var(--main-color);
+            }
+
+        .section-lead {
+            text-align: center;
+            color: var(--text-sub);
+            margin-bottom: 32px;
+            font-size: 0.95rem;
+        }
+
+        /* ボタン */
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 12px 24px;
+            border-radius: 999px;
+            font-weight: 600;
+            border: none;
+            cursor: pointer;
+            font-size: 0.95rem;
+        }
+
+        .btn-primary {
+            background-color: var(--main-color);
+            color: #ffffff;
+        }
+
+            .btn-primary:hover {
+                opacity: 0.9;
+            }
+
+        .btn-outline {
+            border: 1px solid var(--main-color);
+            color: var(--main-color);
+            background-color: #ffffff;
+        }
+
+            .btn-outline:hover {
+                background-color: #eff6ff;
+            }
+
+        /* ヒーロー */
+        .hero {
+            padding: 80px 0 64px;
+        }
+
+        .hero-inner {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 32px;
+            align-items: center;
+        }
+
+        .hero-left {
+            flex: 1 1 320px;
+        }
+
+        .hero-label {
+            display: inline-block;
+            padding: 4px 12px;
+            border-radius: 999px;
+            background-color: #e0f2fe;
+            color: #0369a1;
+            font-size: 0.8rem;
+            margin-bottom: 16px;
+        }
+
+        .hero-title {
+            font-size: 2.2rem;
+            margin-bottom: 16px;
+        }
+
+            .hero-title span {
+                color: var(--main-color);
+            }
+
+        .hero-subtitle {
+            font-size: 1rem;
+            color: var(--text-sub);
+            margin-bottom: 24px;
+        }
+
+        .hero-cta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            align-items: center;
+            margin-bottom: 16px;
+        }
+
+        .hero-note {
+            font-size: 0.8rem;
+            color: var(--text-sub);
+        }
+
+        .hero-right {
+            flex: 1 1 280px;
+        }
+
+        .hero-box {
+            padding: 24px;
+            border-radius: 16px;
+            background: #ffffff;
+            box-shadow: 0 10px 25px rgba(15, 23, 42, 0.12);
+        }
+
+        .hero-box-title {
+            font-weight: 600;
+            margin-bottom: 12px;
+        }
+
+        .hero-list {
+            list-style: none;
+            font-size: 0.9rem;
+            color: var(--text-sub);
+        }
+
+            .hero-list li + li {
+                margin-top: 8px;
+            }
+
+        /* 実績・信頼 */
+        .trust-stats {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 16px;
+            justify-content: center;
+        }
+
+        .trust-item {
+            flex: 1 1 180px;
+            max-width: 260px;
+            background-color: #ffffff;
+            border-radius: 16px;
+            padding: 16px 20px;
+            text-align: center;
+            box-shadow: 0 1px 4px rgba(15, 23, 42, 0.05);
+        }
+
+        .trust-item-value {
+            font-size: 1.6rem;
+            font-weight: 700;
+            color: var(--main-color);
+        }
+
+        .trust-item-label {
+            font-size: 0.85rem;
+            color: var(--text-sub);
+        }
+
+        /* サービス内容 */
+        .service-grid {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 20px;
+        }
+
+        .service-card {
+            background-color: #ffffff;
+            border-radius: 16px;
+            padding: 20px;
+            box-shadow: 0 1px 4px rgba(15, 23, 42, 0.05);
+        }
+
+        .service-card-title {
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+
+        .service-card-text {
+            font-size: 0.9rem;
+            color: var(--text-sub);
+        }
+
+        /* 選ばれる理由 */
+        .reason-list {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 20px;
+        }
+
+        .reason-card {
+            background-color: #ffffff;
+            border-radius: 16px;
+            padding: 20px;
+        }
+
+        .reason-tag {
+            font-size: 0.75rem;
+            color: var(--accent-color);
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+
+        /* 導入の流れ */
+        .flow-list {
+            max-width: 720px;
+            margin: 0 auto;
+        }
+
+        .flow-step {
+            display: flex;
+            gap: 16px;
+            padding: 16px 0;
+            border-bottom: 1px dashed #e5e7eb;
+        }
+
+            .flow-step:last-child {
+                border-bottom: none;
+            }
+
+        .flow-number {
+            width: 32px;
+            height: 32px;
+            border-radius: 999px;
+            background-color: #e0f2fe;
+            color: #0369a1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 0.9rem;
+            flex-shrink: 0;
+        }
+
+        .flow-content-title {
+            font-weight: 600;
+            margin-bottom: 4px;
+        }
+
+        .flow-content-text {
+            font-size: 0.9rem;
+            color: var(--text-sub);
+        }
+
+        /* 料金 */
+        .price-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+        }
+
+        .price-card {
+            flex: 1 1 260px;
+            max-width: 320px;
+            background-color: #ffffff;
+            border-radius: 16px;
+            padding: 24px 20px;
+            text-align: center;
+            box-shadow: 0 2px 8px rgba(15, 23, 42, 0.06);
+        }
+
+            .price-card.highlight {
+                border: 2px solid var(--main-color);
+            }
+
+        .price-name {
+            font-weight: 600;
+            margin-bottom: 4px;
+        }
+
+        .price-desc {
+            font-size: 0.85rem;
+            color: var(--text-sub);
+            margin-bottom: 12px;
+        }
+
+        .price-value {
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin-bottom: 4px;
+        }
+
+        .price-unit {
+            font-size: 0.8rem;
+            color: var(--text-sub);
+            margin-bottom: 12px;
+        }
+
+        .price-list {
+            list-style: none;
+            font-size: 0.85rem;
+            color: var(--text-sub);
+            text-align: left;
+            margin-bottom: 16px;
+        }
+
+            .price-list li + li {
+                margin-top: 6px;
+            }
+
+        /* FAQ */
+        .faq-list {
+            max-width: 720px;
+            margin: 0 auto;
+        }
+
+        .faq-item + .faq-item {
+            margin-top: 12px;
+        }
+
+        .faq-q {
+            font-weight: 600;
+            margin-bottom: 4px;
+        }
+
+        .faq-a {
+            font-size: 0.9rem;
+            color: var(--text-sub);
+        }
+
+        /* フッター・問い合わせ */
+        footer {
+            background-color: #020617;
+            color: #e5e7eb;
+            padding: 32px 0 16px;
+            font-size: 0.85rem;
+        }
+
+        .footer-inner {
+            max-width: 720px;
+            margin: 0 auto 16px;
+        }
+
+        .footer-title {
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+
+        .footer-text {
+            font-size: 0.85rem;
+            color: #9ca3af;
+            margin-bottom: 16px;
+        }
+
+        .footer-form {
+            display: grid;
+            gap: 8px;
+        }
+
+            .footer-form input,
+            .footer-form textarea {
+                width: 100%;
+                padding: 8px 10px;
+                border-radius: 8px;
+                border: 1px solid #4b5563;
+                background-color: #020617;
+                color: #e5e7eb;
+                font-size: 0.85rem;
+            }
+
+            .footer-form textarea {
+                resize: vertical;
+                min-height: 80px;
+            }
+
+        .footer-bottom {
+            text-align: center;
+            color: #6b7280;
+        }
+
+        /* レスポンシブ */
+        @media (max-width: 768px) {
+            .hero {
+                padding-top: 64px;
+            }
+
+            .hero-title {
+                font-size: 1.8rem;
+            }
+
+            .service-grid,
+            .reason-list {
+                grid-template-columns: 1fr;
+            }
+
+            .header-nav {
+                display: none; /* シンプルにナビを非表示（必要ならハンバーガーにしてもOK） */
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ヘッダー -->
+    <header>
+        <div class="container header-inner">
+            <div class="logo">あなたの<span>サービス名</span></div>
+            <nav class="header-nav">
+                <a href="#service">サービス</a>
+                <a href="#price">料金</a>
+                <a href="#flow">導入の流れ</a>
+                <a href="#contact">お問い合わせ</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- ヒーロー -->
+    <section class="hero">
+        <div class="container hero-inner">
+            <div class="hero-left">
+                <div class="hero-label">小さなご相談でも歓迎です</div>
+                <h1 class="hero-title">
+                    IT・自動化の悩みを<br />
+                    <span>まるごとお任せ</span>ください。
+                </h1>
+                <p class="hero-subtitle">
+                    業務の「手作業」を減らしたい、Webページを1枚だけでも作りたい…。<br />
+                    そんなお悩みに、フリーランスエンジニアとして柔軟に対応いたします。
+                </p>
+                <div class="hero-cta">
+                    <a href="#contact" class="btn btn-primary">無料で相談してみる</a>
+                    <a href="#service" class="btn btn-outline">サービス内容を見る</a>
+                </div>
+                <p class="hero-note">
+                    ※24時間以内に必ずご返信いたします（平日・土日祝問わず）
+                </p>
+            </div>
+            <div class="hero-right">
+                <div class="hero-box">
+                    <div class="hero-box-title">こんなお悩みはありませんか？</div>
+                    <ul class="hero-list">
+                        <li>・毎日のExcel作業を自動化したい</li>
+                        <li>・サービス紹介用に1枚のLPが欲しい</li>
+                        <li>・簡単なWebシステムを作りたい</li>
+                        <li>・ITに詳しくないので、丸ごと任せたい</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 実績・信頼 -->
+    <section id="trust">
+        <div class="container">
+            <h2 class="section-title"><span>数字</span>で見る安心感</h2>
+            <p class="section-lead">
+                ※実績がまだ少ない場合は「学習時間」「サンプル制作数」などでもOKです。
+            </p>
+            <div class="trust-stats">
+                <div class="trust-item">
+                    <div class="trust-item-value">3年</div>
+                    <div class="trust-item-label">プログラマー実務経験</div>
+                </div>
+                <div class="trust-item">
+                    <div class="trust-item-value">○件</div>
+                    <div class="trust-item-label">対応したツール・システム</div>
+                </div>
+                <div class="trust-item">
+                    <div class="trust-item-value">24h以内</div>
+                    <div class="trust-item-label">初回返信スピード</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- サービス内容 -->
+    <section id="service">
+        <div class="container">
+            <h2 class="section-title">提供している<span>サービス</span></h2>
+            <p class="section-lead">
+                小さな修正から、新規開発まで幅広く対応可能です。<br />
+                まずは「こんなことできる？」というレベルでもお気軽にご相談ください。
+            </p>
+            <div class="service-grid">
+                <div class="service-card">
+                    <div class="service-card-title">LP・Webページ制作</div>
+                    <p class="service-card-text">
+                        HTML/CSS/JavaScript を用いた1枚ものLPや、小規模サイトの制作を承ります。
+                        スマホ対応も標準で実装します。
+                    </p>
+                </div>
+                <div class="service-card">
+                    <div class="service-card-title">Excel・業務の自動化ツール</div>
+                    <p class="service-card-text">
+                        C# や Python を用いて、Excel作業やデータ整理を自動化するツールを作成します。
+                        手作業の時間削減におすすめです。
+                    </p>
+                </div>
+                <div class="service-card">
+                    <div class="service-card-title">Webアプリ開発</div>
+                    <p class="service-card-text">
+                        ASP.NET Core などを用いたログイン機能付きのWebアプリや、管理画面の開発を行います。
+                        小規模な社内システムにも対応可能です。
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 選ばれる理由 -->
+    <section id="reason">
+        <div class="container">
+            <h2 class="section-title">選ばれる<span>3つの理由</span></h2>
+            <div class="reason-list">
+                <div class="reason-card">
+                    <div class="reason-tag">Reason 01</div>
+                    <div class="service-card-title">プログラマー実務経験にもとづく提案</div>
+                    <p class="service-card-text">
+                        VB.NET / C# / JavaScript などの開発経験を活かし、
+                        実務目線で「使いやすさ」を意識したご提案を行います。
+                    </p>
+                </div>
+                <div class="reason-card">
+                    <div class="reason-tag">Reason 02</div>
+                    <div class="service-card-title">丁寧なコミュニケーション</div>
+                    <p class="service-card-text">
+                        ITに詳しくない方にもわかりやすくご説明します。
+                        用語の説明から、仕様の整理まで一緒に進めていきます。
+                    </p>
+                </div>
+                <div class="reason-card">
+                    <div class="reason-tag">Reason 03</div>
+                    <div class="service-card-title">小さなご相談からでも対応</div>
+                    <p class="service-card-text">
+                        「ここだけ直したい」「まずはお試しで」というご依頼も歓迎です。
+                        ステップを分けて進めることも可能です。
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 導入の流れ -->
+    <section id="flow">
+        <div class="container">
+            <h2 class="section-title">ご依頼の<span>流れ</span></h2>
+            <div class="flow-list">
+                <div class="flow-step">
+                    <div class="flow-number">1</div>
+                    <div>
+                        <div class="flow-content-title">お問い合わせ</div>
+                        <div class="flow-content-text">
+                            下部のフォーム、またはクラウドワークスのメッセージよりご連絡ください。
+                            ざっくりとしたイメージだけでも問題ありません。
+                        </div>
+                    </div>
+                </div>
+                <div class="flow-step">
+                    <div class="flow-number">2</div>
+                    <div>
+                        <div class="flow-content-title">ヒアリング・お見積り</div>
+                        <div class="flow-content-text">
+                            現状の課題やご希望を伺い、最適な進め方とお見積りをご提案いたします。
+                            ここまでは無料です。
+                        </div>
+                    </div>
+                </div>
+                <div class="flow-step">
+                    <div class="flow-number">3</div>
+                    <div>
+                        <div class="flow-content-title">制作・開発</div>
+                        <div class="flow-content-text">
+                            合意いただいた内容にもとづき、制作・開発を進めていきます。
+                            途中経過のご報告も適宜行います。
+                        </div>
+                    </div>
+                </div>
+                <div class="flow-step">
+                    <div class="flow-number">4</div>
+                    <div>
+                        <div class="flow-content-title">納品・サポート</div>
+                        <div class="flow-content-text">
+                            納品後の軽微な修正にも対応いたします。
+                            運用で困った点があればお気軽にご相談ください。
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 料金 -->
+    <section id="price">
+        <div class="container">
+            <h2 class="section-title"><span>料金</span>の目安</h2>
+            <p class="section-lead">
+                ご予算に応じて柔軟に調整いたします。<br />
+                まずは「このくらいでできる？」とお問い合わせください。
+            </p>
+            <div class="price-grid">
+                <div class="price-card">
+                    <div class="price-name">ライトプラン</div>
+                    <div class="price-desc">簡単な修正・小規模なご依頼向け</div>
+                    <div class="price-value">¥5,000〜</div>
+                    <div class="price-unit">/ 単発</div>
+                    <ul class="price-list">
+                        <li>・テキストや画像の差し替え</li>
+                        <li>・軽微なデザイン調整</li>
+                        <li>・簡単なスクリプト修正</li>
+                    </ul>
+                    <button class="btn btn-outline">相談してみる</button>
+                </div>
+                <div class="price-card highlight">
+                    <div class="price-name">スタンダードプラン</div>
+                    <div class="price-desc">LP制作・小規模ツール開発向け</div>
+                    <div class="price-value">¥30,000〜</div>
+                    <div class="price-unit">/ 案件</div>
+                    <ul class="price-list">
+                        <li>・1枚ものLP制作</li>
+                        <li>・Excel自動化ツール</li>
+                        <li>・簡易Webシステム など</li>
+                    </ul>
+                    <button class="btn btn-primary">このプランで相談する</button>
+                </div>
+                <div class="price-card">
+                    <div class="price-name">カスタムプラン</div>
+                    <div class="price-desc">要件に合わせて個別見積もり</div>
+                    <div class="price-value">要見積り</div>
+                    <div class="price-unit">/ 月額・スポット</div>
+                    <ul class="price-list">
+                        <li>・中規模Webアプリ開発</li>
+                        <li>・継続的な保守・改善</li>
+                        <li>・その他ご希望に応じて</li>
+                    </ul>
+                    <button class="btn btn-outline">詳細を相談する</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section id="faq">
+        <div class="container">
+            <h2 class="section-title">よくある<span>ご質問</span></h2>
+            <div class="faq-list">
+                <div class="faq-item">
+                    <div class="faq-q">Q. ITに詳しくないのですが、大丈夫でしょうか？</div>
+                    <div class="faq-a">
+                        A. もちろん大丈夫です。専門用語を避け、できるだけわかりやすい言葉でご説明いたします。
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-q">Q. 予算があまりないのですが、相談できますか？</div>
+                    <div class="faq-a">
+                        A. ご予算に応じて、優先順位を決めながらご提案いたします。まずはお気軽にご相談ください。
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-q">Q. 納期の目安を教えてください。</div>
+                    <div class="faq-a">
+                        A. 内容によりますが、LP制作で1〜2週間、自動化ツールで1〜3週間程度が目安です。
+                        お急ぎの場合もご相談ください。
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- フッター・問い合わせ -->
+    <footer id="contact">
+        <div class="container footer-inner">
+            <div class="footer-title">お問い合わせ</div>
+            <p class="footer-text">
+                ご相談・お見積りは無料です。<br />
+                下記フォームのイメージで、クラウドワークスのメッセージなどからご連絡ください。
+            </p>
+            <div class="footer-form">
+                <input type="text" placeholder="お名前（ハンドルネームでも可）" />
+                <input type="email" placeholder="メールアドレス" />
+                <textarea placeholder="ご相談内容（できるだけ具体的にご記入ください）"></textarea>
+                <button class="btn btn-primary">送信する（ダミーボタン）</button>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            &copy; 2025 あなたのサービス名
+        </div>
+    </footer>
+</body>
+</html>
