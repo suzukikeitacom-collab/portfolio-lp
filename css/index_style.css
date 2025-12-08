@@ -409,11 +409,29 @@ section {
 }
 
 /* プロフィール */
+.prof-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+}
 .prof-box {
     display: flex;
     flex-wrap: wrap;
     gap: 16px;
     justify-content: center;
+}
+
+.prof-title,
+.prof-lead {
+    display: inline-block; /* ブロック幅→文字幅に */
+    padding: 8px 24px; /* 文字まわりの余白 */
+    margin-inline: auto; /* 真ん中寄せ */
+    border-radius: 999px; /* 丸み（お好みで16pxでもOK） */
+    background: linear-gradient( to right, rgba(255, 255, 255, 0), /* 左端：透明 */
+    rgba(255, 255, 255, 0.96) 20%, /* 中央付近：白 */
+    rgba(255, 255, 255, 0.96) 80%, rgba(255, 255, 255, 0) /* 右端：透明 */
+    );
 }
 
 .prof-item {
@@ -424,6 +442,15 @@ section {
     padding: 16px 20px;
     text-align: center;
     box-shadow: 0 1px 4px rgba(15, 23, 42, 0.05);
+}
+
+.profile-section {
+    position: relative;
+    padding: 80px 0;
+    background: linear-gradient(to right, rgba(255, 255, 255, 0) 40%, rgba(255, 255, 255, 1) 80%), url("../images/profile-photo.jpg");
+    background-size: cover;
+    background-position: left center;
+    background-repeat: no-repeat;
 }
 
 .prof-content {
