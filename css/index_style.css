@@ -413,41 +413,39 @@ section {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 8px;
+    gap: 12px;
+    margin-bottom: 32px;
 }
 .prof-box {
     display: flex;
-    flex-wrap: wrap;
-    gap: 16px;
     justify-content: center;
+    align-items: stretch;
+    gap: 20px;
+    flex-wrap: wrap;
 }
 
 .prof-title,
 .prof-lead {
-    display: inline-block; /* ブロック幅→文字幅に */
-    padding: 8px 24px; /* 文字まわりの余白 */
-    margin-inline: auto; /* 真ん中寄せ */
-    border-radius: 999px; /* 丸み（お好みで16pxでもOK） */
-    background: linear-gradient( to right, rgba(255, 255, 255, 0), /* 左端：透明 */
-    rgba(255, 255, 255, 0.96) 20%, /* 中央付近：白 */
-    rgba(255, 255, 255, 0.96) 80%, rgba(255, 255, 255, 0) /* 右端：透明 */
-    );
+    display: inline-block;
+    padding: 10px 24px;
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.92);
+    box-shadow: 0 10px 25px rgba(15, 23, 42, 0.18);
+    margin: 0;
 }
 
 .prof-item {
-    flex: 1 1 180px;
-    max-width: 260px;
-    background-color: #ffffff;
+    background: #ffffff;
+    padding: 24px;
+    flex: 1 1 220px;
     border-radius: 16px;
-    padding: 16px 20px;
+    box-shadow: 0 2px 8px rgba(15, 23, 42, 0.06);
     text-align: center;
-    box-shadow: 0 1px 4px rgba(15, 23, 42, 0.05);
 }
 
 .profile-section {
-    position: relative;
     padding: 80px 0;
-    background: linear-gradient(to right, rgba(255, 255, 255, 0) 40%, rgba(255, 255, 255, 1) 80%), url("../images/profile-photo.jpg");
+    background: linear-gradient(to right, rgba(255, 255, 255, 0) 35%, rgba(255, 255, 255, 1) 70%), url("../images/profile-photo.jpg");
     background-size: cover;
     background-position: left center;
     background-repeat: no-repeat;
@@ -547,5 +545,41 @@ footer {
 
     .header-nav {
         display: none; /* シンプルにナビを非表示（必要ならハンバーガーにしてもOK） */
+    }
+
+    .profile-section {
+        background-size: contain; /* 全体にフィット */
+        background-position: top left;
+        background-repeat: no-repeat;
+        background-blend-mode: lighten;
+    }
+
+    .prof-header {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 12px;
+        margin-bottom: 32px;
+    }
+
+    .prof-title,
+    .prof-lead {
+        display: inline-block;
+        padding: 10px 24px;
+        border-radius: 999px;
+        background: rgba(255, 255, 255, 0.92);
+        box-shadow: 0 10px 25px rgba(15, 23, 42, 0.18);
+        margin: 0;
+    }
+
+    .prof-item {
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    .prof-item {
+        width: 100%;
+        max-width: 350px;
+        margin-inline: auto;
     }
 }
