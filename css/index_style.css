@@ -77,7 +77,7 @@ header {
 
 /* セクション共通 */
 section {
-    padding: 64px 0;
+    padding: 80px 0;
 }
 
     section:nth-of-type(odd) {
@@ -345,6 +345,10 @@ section {
     .reason-card:hover {
         transform: translateY(-6px);
         box-shadow: 0 8px 24px rgba(15, 23, 42, 0.12);
+    }
+
+    .reason-card p {
+        line-height: 1.75;
     }
 
 .reason-tag {
