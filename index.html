@@ -24,9 +24,9 @@
     </header>
 
     <!-- ヒーロー -->
-    <section class="hero">
+    <section class="hero fade-up">
         <div class="container hero-inner">
-            <div class="hero-left">
+            <div class="hero-left fade-up-delay-1">
                 <div class="hero-label">小さなご相談でも歓迎です</div>
                 <h1 class="hero-title">
                     IT・自動化の悩みを<br />
@@ -44,7 +44,7 @@
                     ※24時間以内に必ずご返信いたします（平日・土日祝問わず）
                 </p>
             </div>
-            <div class="hero-right">
+            <div class="hero-right fade-up-delay-2">
                 <div class="hero-box">
                     <div class="hero-box-title">こんなお悩みはありませんか？</div>
                     <ul class="hero-list">
@@ -92,25 +92,50 @@
             </p>
             <div class="service-grid">
                 <div class="service-card">
-                    <div class="service-card-title">LP・Webページ制作</div>
+                    <div class="service-card-title">🌐 Webアプリ開発</div>
                     <p class="service-card-text">
-                        HTML/CSS/JavaScript を用いた1枚ものLPや、小規模サイトの制作を承ります。
-                        スマホ対応も標準で実装します。
+                        小さな社内ツールや、顧客管理アプリなど、
+                        “必要なものだけ” を最小コストで開発します。
                     </p>
                 </div>
                 <div class="service-card">
-                    <div class="service-card-title">Excel・業務の自動化ツール</div>
+                    <div class="service-card-title">🛠 Excel自動化ツール</div>
                     <p class="service-card-text">
-                        C# を用いて、Excel作業やデータ整理を自動化するツールを作成します。
-                        手作業の時間削減におすすめです。
+                        細かい業務を自動化するだけで、工数を大幅に削減できます。
+                        「今のExcelを送るだけ」で作成可能です。
                     </p>
                 </div>
                 <div class="service-card">
-                    <div class="service-card-title">Webアプリ開発</div>
+                    <div class="service-card-title">📊 IT活用サポート</div>
                     <p class="service-card-text">
-                        ASP.NET Core などを用いたログイン機能付きのWebアプリや、管理画面の開発を行います。
-                        小規模な社内システムにも対応可能です。
+                        ITが苦手な方でも安心して相談できるよう、
+                        丁寧なヒアリングで「一番簡単な解決」から提案します
                     </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ポートフォリオ -->
+    <section class="portfolio-section">
+        <div class="container">
+            <h2 class="section-title"><span>製作実績</span>（サンプル）</h2>
+            <p class="section-lead">過去に作成したデザイン・ツールのイメージです。</p>
+
+            <div class="portfolio-items">
+                <div class="portfolio-card">
+                    <h3>LPデザイン（本画面）</h3>
+                    <p>シンプルで読みやすい構成のランディングページを制作しました。</p>
+                </div>
+
+                <div class="portfolio-card">
+                    <h3>業務自動化ツール</h3>
+                    <p>Excel作業を自動化するツールを作成し、作業時間を大幅に削減しました。</p>
+                </div>
+
+                <div class="portfolio-card">
+                    <h3>Webアプリユーザー管理ツール</h3>
+                    <p>ユーザー管理が簡単になる、シンプルなWebアプリを作成しました。</p>
                 </div>
             </div>
         </div>
@@ -275,9 +300,22 @@
         </div>
     </section>
 
+    <!-- よくあるご相談 -->
+    <section id="consultation" class="contact-guide">
+        <div class="container">
+            <h2 class="section-title">よくあるご相談</h2>
+            <ul class="consultation-ul">
+                <li><span>✓</span>Excel作業を自動化したい</li>
+                <li><span>✓</span>簡単な社内ツールを作りたい</li>
+                <li><span>✓</span>Webサイトを作りたい</li>
+                <li><span>✓</span>ITが苦手なので相談したい</li>
+            </ul>
+        </div>
+    </section>
+
     <section id="profile" class="profile-section">
         <div class="container">
-            <div class="prof-header">
+            <div class="prof-header fade-up">
                 <h2 class="section-title prof-title"><span>プロフィール</span></h2>
                 <p class="section-lead prof-lead">
                     簡単なプロフィールです。<br />
@@ -285,20 +323,20 @@
                 </p>
             </div>
             <div class="prof-box">
-                <div class="prof-item">
+                <div class="prof-item fade-up-delay-1">
                     <div class="prof-content">氏名</div>
                     <div class="prof-name">鈴木啓太</div>
                 </div>
-                <div class="prof-item">
+                <div class="prof-item fade-up-delay-1">
                     <div class="prof-content">生年月日</div>
                     <div class="prof-birthday">1999年 10月 24日</div>
                 </div>
-                <div class="prof-item">
+                <div class="prof-item fade-up-delay-1">
                     <div class="prof-content">好きなこと</div>
                     <div class="prof-like">Official髭男dism</div>
                     <div class="prof-like">ゲーム</div>
                 </div>
-                <div class="prof-item">
+                <div class="prof-item fade-up-delay-1">
                     <div class="prof-content">得意な技術</div>
                     <div class="prof-like">C#</div>
                     <div class="prof-like">VB.NET</div>
@@ -341,7 +379,7 @@
             </div>
         </div>
         <div class="footer-bottom">
-            &copy; 2025 あなたのサービス名
+            &copy; 2025 フリーランスエンジニア 鈴木啓太
         </div>
     </footer>
 </body>

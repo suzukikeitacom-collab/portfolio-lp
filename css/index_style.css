@@ -235,6 +235,11 @@ section {
     box-shadow: 0 1px 4px rgba(15, 23, 42, 0.05);
 }
 
+    .trust-item:hover {
+        transform: translateY(-6px);
+        box-shadow: 0 8px 24px rgba(15, 23, 42, 0.12);
+    }
+
 .trust-item-value {
     font-size: 1.6rem;
     font-weight: 700;
@@ -254,11 +259,18 @@ section {
 }
 
 .service-card {
-    background-color: #ffffff;
-    border-radius: 16px;
-    padding: 20px;
-    box-shadow: 0 1px 4px rgba(15, 23, 42, 0.05);
+    background: #ffffff;
+    padding: 32px;
+    border-radius: 20px;
+    box-shadow: 0 4px 16px rgba(15, 23, 42, 0.08);
+    text-align: left;
+    transition: 0.3s ease;
 }
+
+    .service-card:hover {
+        transform: translateY(-6px);
+        box-shadow: 0 8px 24px rgba(15, 23, 42, 0.12);
+    }
 
 .service-card-title {
     font-weight: 600;
@@ -269,6 +281,28 @@ section {
     font-size: 0.9rem;
     color: var(--text-sub);
 }
+
+/* ポートフォリオ */
+.portfolio-items {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin-top: 30px;
+}
+
+.portfolio-card {
+    flex: 1 1 260px;
+    padding: 24px;
+    background: #ffffff;
+    border-radius: 16px;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.05);
+    transition: 0.3s ease;
+}
+
+    .portfolio-card:hover {
+        transform: translateY(-6px);
+        box-shadow: 0 8px 24px rgba(15, 23, 42, 0.12);
+    }
 
 /* 選ばれる理由 */
 .reason-list {
@@ -281,7 +315,13 @@ section {
     background-color: #ffffff;
     border-radius: 16px;
     padding: 20px;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.05);
 }
+
+    .reason-card:hover {
+        transform: translateY(-6px);
+        box-shadow: 0 8px 24px rgba(15, 23, 42, 0.12);
+    }
 
 .reason-tag {
     font-size: 0.75rem;
@@ -353,6 +393,11 @@ section {
         border: 2px solid var(--main-color);
     }
 
+    .price-card:hover {
+        transform: translateY(-6px);
+        box-shadow: 0 8px 24px rgba(15, 23, 42, 0.12);
+    }
+
 .price-name {
     font-weight: 600;
     margin-bottom: 4px;
@@ -408,6 +453,22 @@ section {
     color: var(--text-sub);
 }
 
+/* よくあるご相談 */
+.consultation-ul {
+    max-width: 720px;
+    margin: 0 auto;
+    list-style: none;
+}
+
+.consultation-ul li + li {
+    margin-top: 12px;
+}
+
+.consultation-ul li span {
+    color: var(--main-color);
+    font-weight: 600;
+}
+
 /* プロフィール */
 .prof-header {
     display: flex;
@@ -416,6 +477,7 @@ section {
     gap: 12px;
     margin-bottom: 32px;
 }
+
 .prof-box {
     display: flex;
     justify-content: center;
@@ -442,6 +504,11 @@ section {
     box-shadow: 0 2px 8px rgba(15, 23, 42, 0.06);
     text-align: center;
 }
+
+    .prof-item:hover {
+        transform: translateY(-6px);
+        box-shadow: 0 8px 24px rgba(15, 23, 42, 0.12);
+    }
 
 .profile-section {
     padding: 80px 0;
@@ -581,5 +648,41 @@ footer {
         width: 100%;
         max-width: 350px;
         margin-inline: auto;
+    }
+
+    /* アニメーション */
+    /* ふわっと上に出てくるアニメーション共通クラス */
+    .fade-up {
+        opacity: 0;
+        transform: translateY(16px);
+        animation: fadeUp 0.8s ease-out forwards;
+    }
+
+    /* 少し遅れて出したいとき用 */
+    .fade-up-delay-1 {
+        opacity: 0;
+        transform: translateY(16px);
+        animation: fadeUp 0.8s ease-out forwards;
+        animation-delay: 0.2s;
+    }
+
+    .fade-up-delay-2 {
+        opacity: 0;
+        transform: translateY(16px);
+        animation: fadeUp 0.8s ease-out forwards;
+        animation-delay: 0.4s;
+    }
+
+    /* 実際のアニメーション定義 */
+    @keyframes fadeUp {
+        0% {
+            opacity: 0;
+            transform: translateY(16px);
+        }
+
+        100% {
+            opacity: 1;
+            transform: translateY(0);
+        }
     }
 }
